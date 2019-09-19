@@ -1,0 +1,37 @@
+doctype html
+html(lang='en' class="h-100")
+  head
+    meta(charset='utf-8')
+    title Nodejs Arduino Socket.io
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/sticky-footer-navbar.css')
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/main.js')
+  body.d-flex.flex-column.h-100
+    header
+        nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+            a(class='navbar-brand' href='/') Nodejs Socket.io Arduino
+    main(role='main' class='flex-shrink-0')
+        .container
+            .row
+                .col.align-self-center
+                    .row
+                        .col-sm
+                            div(class="card" style="width: 18rem;")
+                                .card-body
+                                    h1(class="card-title" id="temperature")
+                                    h1.card-text Temperature
+                    .row
+                        .col-sm
+                            div(class="card" style="width: 18rem;")
+                                .card-body
+                                    h1(class="card-title" id="humidity")
+                                    h1.card-text Humidity
+                    .row
+                        .col-sm
+                            .form-group
+                                label(for="formControlRange") Led control
+                                input(type="range" class="form-control-range" id="controlRange" oninput="showValue(this.value)")
+    footer.footer.mt-auto.py-3
+        .container
+            span.text-muted Developed by Dawin Valenzuela
